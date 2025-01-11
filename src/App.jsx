@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FormItems } from "./components/FormItems";
 import { TodoList } from "./components/TodoList";
+import "./css/styles.css"
 
 
 export default function App() {

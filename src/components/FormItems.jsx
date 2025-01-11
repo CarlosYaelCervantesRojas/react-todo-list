@@ -4,35 +4,38 @@ import { useState } from "react";
 
 export function FormItems({ onSubmit }) {
 
-    const [newItem, setNewItem] = useState("");
+  const [newItem, setNewItem] = useState("");
 
-    function handleSubmit(e) {
-        e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-        if (newItem === "") return;
+    if (newItem === "") return;
 
-        onSubmit(newItem);
+    onSubmit(newItem);
 
-        setNewItem("");
-      }
+    setNewItem("");
+  }
 
-    return (
-        <form onSubmit={handleSubmit}>
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+
         <label htmlFor="item">
           New Item
-          <input
-            value={newItem}
-            onChange={e => setNewItem(e.target.value)}
-            type="text" 
-            id="item"
-          />
         </label>
+        <input
+          value={newItem}
+          onChange={e => setNewItem(e.target.value)}
+          type="text"
+          id="item"
+        />
+      </div>
 
-        <button>Add</button>
-      </form>
-    );
+      <button>Add</button>
+    </form>
+  );
 }
 
 FormItems.propTypes = {
-    onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired
 }
